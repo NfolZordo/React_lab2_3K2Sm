@@ -27,6 +27,6 @@ function App() {
       </ul>
     </nav>
   );
-}
+} 
 
 export default App;
