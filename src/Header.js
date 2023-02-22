@@ -51,7 +51,7 @@ export default class App extends Component {
             </Navbar.Collapse>
           </Container>
         </Navbar>
-        <div style={{ marginTop: '60px' }}>
+        <div style={{ marginTop: '50px' }}>
           <Router>
             <Routes>
               <Route path="/" element={<Home />} />
