@@ -9,10 +9,15 @@ import {
   Form,
   Button
 } from "react-bootstrap";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from './Pages/Home';
+import Contacts from './Pages/Contacts';
+import About from './Pages/About';
+import Blog from './Pages/Blog';
 import logo from "./logo192.png";
 
-export default class Header extends Component {
+
+export default class App extends Component {
   render() {
     return (
       <>
@@ -28,7 +33,7 @@ export default class Header extends Component {
               /> React Site
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav" style={{justifyContent:'space-between'}}>
+            <Navbar.Collapse id="responsive-navbar-nav" style={{ justifyContent: 'space-between' }}>
               <Nav>
                 <Nav.Link href="/"> Home </Nav.Link>
                 <Nav.Link href="/about"> About us </Nav.Link>
@@ -46,6 +51,16 @@ export default class Header extends Component {
             </Navbar.Collapse>
           </Container>
         </Navbar>
+        <div style={{ marginTop: '60px' }}>
+          <Router>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contacts" element={<Contacts />} />
+              <Route path="/blog" element={<Blog />} />
+            </Routes>
+          </Router>
+        </div>
       </>
     )
   }
